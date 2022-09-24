@@ -12,7 +12,6 @@ rm -rf ~/android
 mkdir ~/android
 cd ~/android
 
-# A Function to Send Posts to Telegram
 telegram_message() {
 	curl -s -X POST "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
 	-d chat_id="${TG_CHAT_ID}" \
@@ -20,12 +19,8 @@ telegram_message() {
 	-d text="$1"
 }
 
-# Clone the Sync Repo
 cd ~/android
 repo init -u https://github.com/OnePlusOSS/android.git -b oneplus6/9.0.0
-
-# Sync the Sources
-cd ~/android
-repo sync -j6
+repo sync -j$(nproc --all) --force-sync
 
 exit 0
