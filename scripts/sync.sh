@@ -22,7 +22,7 @@ telegram_message() {
 
 # Clone the Sync Repo
 cd ~/android
-repo init -u git://github.com/OnePlusOSS/android.git -b oneplus6/9.0.0
+repo init -u https://github.com/OnePlusOSS/android.git -b oneplus6/9.0.0
 
 # Sync the Sources
 cd ~/android
