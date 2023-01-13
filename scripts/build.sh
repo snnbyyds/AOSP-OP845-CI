@@ -26,6 +26,7 @@ fi
 
 # Prepare the Build Environment
 cd ~/android
+cd ~/android/SDM845/android
 source build/envsetup.sh
 lunch sdm845-userdebug
 
